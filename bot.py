@@ -176,14 +176,11 @@ def verificar_webhook():
     mode = request.args.get("hub.mode")
     token = request.args.get("hub.verify_token")
     challenge = request.args.get("hub.challenge")
-
-   if mode == "subscribe" and token == "renacer2024":
-        print("✅ Webhook verificado correctamente")
+    
+    if mode == "subscribe" and token == "renacer2024":
         return challenge, 200
-    else:
-        print("❌ Falló la verificación del webhook")
-        return "Error de verificación", 403
-
+    return "Error de verificación", 403
+    
 @app.route("/webhook", methods=["POST"])
 def recibir_mensaje():
     data = request.get_json()
