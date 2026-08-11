@@ -177,7 +177,7 @@ def verificar_webhook():
     token = request.args.get("hub.verify_token")
     challenge = request.args.get("hub.challenge")
 
-    if mode == "subscribe" and token == VERIFY_TOKEN:
+   if mode == "subscribe" and token == "renacer2024":
         print("✅ Webhook verificado correctamente")
         return challenge, 200
     else:
