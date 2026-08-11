@@ -211,5 +211,4 @@ def recibir_mensaje():
 def home():
     return "🌸 Bot de Estética Renacer funcionando ✨"
 
-if __name__ == "__main__":
-    app.run(port=5000, debug=True)
+# Gunicorn se encarga de iniciar la app automáticamente en Render
